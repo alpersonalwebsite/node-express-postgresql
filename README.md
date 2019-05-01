@@ -2,6 +2,8 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/alpersonalwebsite/node-express-postgre.svg)](https://greenkeeper.io/)
 
+[![Build Status](https://travis-ci.com/alpersonalwebsite/node-express-postgre.svg?branch=master)](https://travis-ci.com/alpersonalwebsite/node-express-postgre)
+
 `Node + Express` (locally) connecting, querying, parsing and retrieving to /x endpoint *1000 users* from an external sever (`isilo.db.elephantsql.com`).
 The *MAIN* purpose of this repo is to `benchmark performance`
 
