@@ -2,7 +2,9 @@ language: node_js
 node_js:
  - "node"
 sudo: false
-install: true
+install: yarn install
+script:
+- echo "skipping tests"
 deploy:
   provider: heroku
   api_key:
