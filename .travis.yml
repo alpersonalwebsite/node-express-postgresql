@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+ - "node"
+sudo: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: ...
+  app: node-express-postgre
+  on:
+    repo: alpersonalwebsite/node-express-postgre
