@@ -8,7 +8,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: ...
+    secure: "Rk/eE7G1gsaLxJaxGboa3eZA3XxbUdYZTgWdPuo6ZLgCNuC0EXGRI5yksDahMtIcB0llqXgbyJjIrDw0Ps23PICZIB1J98pwgFOPewrlrjc1PBMZy9w9AqJkYkA/IlKXa6AhYZXOaz6lxE8TneSW8g7VHtNggjnt1YFrrAsRTqtoYNjyzp55gVIdC5DC6SPfMPyBryIc04FEEE7Ohpgp1+ecId+9Oadp9GdIw6RwlpB+7IoLSXxABtfqzTXHIuRDEH39oUSL9xz+Ohg/o2kro+BSoAx1x9HBHEKkV47gw3AK1yuI3MOEuklnGAeTw2SWpMqNvv2J4O9/YDrftgEwZMhHsDEpEHhSpC2b15k3+9MeBudv4t2jnQajlxoT96VTl2eN3glB+HeoEMXJP6Zwfw40jzVVvV3m83JUEWZl+IkU3zZSUBJEk+u/IND8vl7Al/PdL9/783EvXpydJC/3kEn8seEvjBRF7FT1mnX8NEzPRRc4VjRm+xboQ5jiPZuROazusGKDCuMqreybOsrLJHA+8uzc3hJRGQWmqDgmFrNKmpNa6HY7FSgxFqYQ0rL4CQLOyNmaZeBFc4HTPVFu4SdWFeBMFY9OCEO4y//E4O52Nuzmi4DVgZpbNZMrJiNebIvv/wMR9wOutBoOHHPZO8cDedp88trOAlGcEkUHbAA="
   app: node-express-postgre
   on:
     repo: alpersonalwebsite/node-express-postgre
