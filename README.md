@@ -12,6 +12,12 @@ yarn install
 ```
 ## Running the server
 
+### Development
+```
+npm run dev
+```
+
+### Production
 ```
 npm start
 ```
