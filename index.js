@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.json({
-        message: 'Node.js, Express, and Postgres API'
+        message: 'Node.js, Express, and Postgres API!'
     })
 })
 

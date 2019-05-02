@@ -75,3 +75,41 @@ Example result:
                                  Dload  Upload   Total   Spent    Left  Speed
 100 78341  100 78341    0     0   165k      0 --:--:-- --:--:-- --:--:--  164k
 ```
+
+---
+
+## Notes
+**This is unrelated to the project; however, if you want to utilize a similar CI/CD pipeline, you can follow the instructions beneath**
+
+First, be sure that you connect `Travis CLI` (*.org or *.com) with your `GitHub` account setting the proper permissions. Once this is done, you should be able to see all your "repos" in Travis dashboard.
+
+Then, set-up an account in `heroku` and create a `new App`.
+
+Through the heroku CLI or dashboard add your `environment variables` (secrets, or Config Vars) which is the content that we have in our `.env` and we use for development. **REMEMBER: Never integrate secrets or configurations files to control versioning**
+Then, click in `More` (top right corner) and then in `Restart all dynos`.
+
+Install `Travis CLI`.
+```
+gem install travis
+```
+
+Copy the `API key` from https://dashboard.heroku.com/account
+
+In the terminal, execute the command to encrypt the `API key`
+```
+travis encrypt API key
+```
+
+I will return a JSON output like:
+```
+secure: "thiIsTheEncryptedApiKEY"
+```
+
+At the root level of your repo, create the file `.travis.yml`
+1. For the moment we are going to `skip tests` (`Travis` will try to run `npm test` or `yarn test` by default)
+2. Replace the value of `secure` with the encrypted value of your `API key`, example: "thiIsTheEncryptedApiKEY"
+3. In `app`, set as value the name of your `heroku app`
+4. In `repo`, your repository.
+
+Now, make a change to "x-file", add/commit/push. If everything went well, once you "integrate your code to `Git`", `Travis` will start the build (you can see the process in Travis console) and deploy to `Heroku`.  
+Now, you should be able to go to: https://your-app-name.herokuapp.com/ and interact with your application.
