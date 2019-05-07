@@ -64,6 +64,31 @@ Returns: 1000 records - `array of objects`
 ]
 ```
 
+#### Query string parameters
+
+**Limit users**
+
+Returns `n` record(s) where `n` is the value (type: Number) of the `limit` key.
+
+Example: `users?limit=1`
+
+Result
+```
+[
+  {
+    user_id: 1,
+    name: "Johnathon",
+    lastname: "Grimes",
+    email: "tssvjkoUc",
+    age: 78
+  }
+]
+```
+
+Wrong type for `n` value will return *all the users*.
+Example: `users?limit=%27Hello%27`
+
+
 ## Benchmarking 
 ```
 curl http://localhost:3002/users -w "%{time_connect},%{time_total},%{speed_download},%{http_code},%{size_download},%{url_effective}\n" -o /dev/null
@@ -216,7 +241,7 @@ yarn run v1.15.2
 $ eslint *.js --ignore-pattern node_modules/
 Warning: React version not specified in eslint-plugin-react settings. See https://github.com/yannickcr/eslint-plugin-react#configuration .
 
-/Users/aldiaz/git/node-express-postgre/index.js
+/Users/*/node-express-postgre/index.js
   5:7  error  'port' is assigned a value but never used  no-unused-vars
 
 ✖ 1 problem (1 error, 0 warnings)
