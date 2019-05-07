@@ -10,9 +10,9 @@ const pool = new Pool({
 })
 
 const isLimited = (limit) => {
-  const toNumber = parseInt(limit, 10);
+  const toNumber = parseInt(limit, 10)
   if (typeof toNumber === 'number' && !isNaN(toNumber)) {
-    return 'LIMIT ' + toNumber;
+    return 'LIMIT ' + toNumber
   }
   return ''
 }
