@@ -124,12 +124,16 @@ gem install travis
 
 Copy the `API key` from https://dashboard.heroku.com/account
 
-In the terminal, execute the command to encrypt the `API key`
+In the terminal...
+1. Login into `travis`: `travis login --pro` 
+   You will use your `Github credentials: username and password.
+2. Execute the command to encrypt the `API key`
 ```
-travis encrypt API key
+travis encrypt Heroku API key --com
 ```
+*Note*: If you use the `*.org` service set the proper flag: `--org`
 
-I will return a JSON output like:
+It will return a JSON output like:
 ```
 secure: "thiIsTheEncryptedApiKEY"
 ```

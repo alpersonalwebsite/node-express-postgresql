@@ -17,7 +17,7 @@ const isLimited = (limit) => {
   return ''
 }
 
-const getUsers = (req, res) => {
+const getUsers = (req, res, next) => {
   pool.query('SELECT * FROM ' + process.env.DB_TABLE + ' ORDER BY user_id ASC ' + isLimited(req.query.limit), (error, results) => {
     if (error) {
       throw error
