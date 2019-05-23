@@ -9,16 +9,30 @@ const pool = new Pool({
   port: process.env.DB_PORT
 })
 
-const isLimited = (limit) => {
-  const toNumber = parseInt(limit, 10)
+const toNumberHelper = (queryInput) => {
+  const toNumber = parseInt(queryInput, 10)
   if (typeof toNumber === 'number' && !isNaN(toNumber)) {
-    return 'LIMIT ' + toNumber
+    return toNumber
   }
   return ''
 }
 
+const resultsToDisplay = (limit) => {
+  const parsedLimit = toNumberHelper(limit)
+  return parsedLimit ? 'LIMIT ' + parsedLimit : ''
+}
+
+const resultsFromOffset = (offset) => {
+  const parsedOffset = toNumberHelper(offset)
+  return parsedOffset ? 'OFFSET ' + toNumberHelper(offset) : ''
+}
+
 const getUsers = (req, res, next) => {
-  pool.query('SELECT * FROM ' + process.env.DB_TABLE + ' ORDER BY user_id ASC ' + isLimited(req.query.limit), (error, results) => {
+  pool.query('SELECT * FROM ' + process.env.DB_TABLE +
+    ' ORDER BY user_id ASC ' +
+    resultsToDisplay(req.query.limit) +
+    resultsFromOffset(req.query.offset),
+  (error, results) => {
     if (error) {
       throw error
     }

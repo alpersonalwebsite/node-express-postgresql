@@ -16,12 +16,12 @@ yarn install
 
 ### Development
 ```
-npm run dev
+yarn run dev
 ```
 
 ### Production
 ```
-npm start
+yarn start
 ```
 
 ## API endpoints or routes 
@@ -88,6 +88,34 @@ Result
 Wrong type for `n` value will return *all the users*.
 Example: `users?limit=%27Hello%27`
 
+**Setting offset**
+
+Returns from `n` (PRIMARY KEY) where `n` is the value (type: Number) of the `offset` key.
+
+Example: `users?offset=10`
+
+Result:
+```
+[
+  {
+    user_id: 11,
+    name: "Amari",
+    lastname: "Holcomb",
+    email: "R1Sn1P",
+    age: 25
+  },
+  {
+    user_id: 12,
+    name: "Macey",
+    lastname: "Bradford",
+    email: "Lqv",
+    age: 79
+  }
+  ...
+  ...
+  ...
+]
+```
 
 ## Benchmarking 
 ```
