@@ -26,6 +26,13 @@ app.get('/', (req, res, next) => {
 
 app.get('/users', db.getUsers)
 
+app.get('*', (req, res, next) => {
+  res.status(404).json({
+    message: '404, Baby!',
+    error: true
+  })
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`App running on port ${process.env.PORT}.`)
 })
