@@ -31,7 +31,7 @@ app.get('*', (req, res, next) => {
     message: '404, Baby!',
     error: true
   })
-});
+})
 
 app.listen(process.env.PORT, () => {
   console.log(`App running on port ${process.env.PORT}.`)
