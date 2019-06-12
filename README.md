@@ -3,6 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/alpersonalwebsite/node-express-postgre.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.com/alpersonalwebsite/node-express-postgre.svg?branch=master)](https://travis-ci.com/alpersonalwebsite/node-express-postgre)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 
 `Node + Express` (locally) connecting, querying, parsing and retrieving to /x endpoint *1000 users* from an external sever (`isilo.db.elephantsql.com`).
