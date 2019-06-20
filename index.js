@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const bodyParser = require('body-parser')
 const db = require('./queries')
 
@@ -11,6 +12,8 @@ app.use(
 )
 
 app.use(bodyParser.json())
+
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')

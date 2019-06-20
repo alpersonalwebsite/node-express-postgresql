@@ -118,6 +118,14 @@ Result:
 ]
 ```
 
+## Static files
+
+At the moment, we are serving the following resource `autumn.jpg | 3.8 MB` to be consumed by other applications.
+
+Path: `/images/autumn.jpg`
+
+---
+
 ## Benchmarking 
 ```
 curl http://localhost:3002/users -w "%{time_connect},%{time_total},%{speed_download},%{http_code},%{size_download},%{url_effective}\n" -o /dev/null
@@ -297,3 +305,8 @@ $ eslint *.js --ignore-pattern node_modules/
 Warning: React version not specified in eslint-plugin-react settings. See https://github.com/yannickcr/eslint-plugin-react#configuration .
 ✨  Done in 1.28s.
 ```
+
+---
+
+## Credits
+`Free autumn tree` photo by [Ali Taylor](https://www.freeimages.com/photographer/alitaylor-52272) from [FreeImages](https://freeimages.com/)
