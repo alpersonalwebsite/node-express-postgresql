@@ -16,7 +16,7 @@
   "dependencies": {
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
-    "pg": "^7.10.0"
+    "pg": "^8.0.0"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
