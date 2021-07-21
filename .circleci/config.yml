@@ -1,0 +1,43 @@
+version: 2.1
+
+orbs:
+  heroku: circleci/heroku@1.2.6
+
+executors:
+  custom-executor:
+    docker:
+      - image: circleci/node:lts
+
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-lint
+      - deploy:
+          requires:
+            - build-lint
+          filters:
+            branches:
+              only: master
+
+jobs:
+  build-lint:
+    executor: custom-executor
+    steps: 
+      - checkout
+      - run:
+          name: Install Packages
+          command: |
+            npm install
+      - run:
+          name: Lint
+          command: |
+            npm run lint
+  deploy:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - heroku/deploy-via-git:
+          force: true
