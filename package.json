@@ -33,7 +33,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.9.0"
+    "sequelize": "^6.21.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
