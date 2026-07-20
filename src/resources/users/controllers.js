@@ -10,6 +10,6 @@ export const getUsers = async (req, res) => {
     res.status(200).json({ data: docs })
   } catch (err) {
     console.error(err)
-    res.status(400).end()
+    res.status(500).end()
   }
 }
