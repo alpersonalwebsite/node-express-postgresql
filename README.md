@@ -23,6 +23,9 @@ npm install
 
 Git hooks are installed automatically by the `prepare` script (husky).
 
+> Installs use `legacy-peer-deps` (set in `.npmrc`) because the pinned 2021
+> dev tooling predates npm 7's stricter peer-dependency resolution.
+
 ## Environment variables
 
 The app loads `src/config/<ENVIRONMENT>.env`, so create `dev.env` for
