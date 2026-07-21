@@ -3,7 +3,7 @@ const prettierConfig = require('./.prettierrc.js')
 module.exports = {
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 6
+    ecmaVersion: 2020
   },
   parser: 'babel-eslint',
   env: {

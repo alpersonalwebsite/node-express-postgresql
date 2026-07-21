@@ -17,18 +17,22 @@ This is an easy, basic and raw example of **HOW to** implement an API with Node,
 
 ## Install dependencies
 
-To avoid issues with `husky`, first enable `git hooks` (and add our hook):
-
-```shell
-npx husky install
-
-npx husky add .husky/pre-commit
-```
-
-Then, install the dependencies as usual:
-
 ```shell
 npm install
+```
+
+Git hooks are installed automatically by the `prepare` script (husky).
+
+> Installs use `legacy-peer-deps` (set in `.npmrc`) because the pinned 2021
+> dev tooling predates npm 7's stricter peer-dependency resolution.
+
+## Environment variables
+
+The app loads `src/config/<ENVIRONMENT>.env`, so create `dev.env` for
+`npm run dev` and `prod.env` for `npm start`. Start from the sample:
+
+```shell
+cp src/config/.env.example src/config/dev.env
 ```
 
 ## DB
@@ -57,7 +61,7 @@ CSV HEADER;
 ### Dump data from local DB to external
 
 ```shell
-pg_dump postgres://your-user:your-password@127.0.01/agency | psql postgres://your-user:your-password@your-endpoint.db.elephantsql.com/your-database-name
+pg_dump postgres://your-user:your-password@127.0.0.1/users | psql postgres://your-user:your-password@your-endpoint.db.elephantsql.com/your-database-name
 ```
 
 ## Running the server
@@ -163,8 +167,8 @@ curl http://127.0.0.1:3333/api/users?limit=1
 }
 ```
 
-Wrong type for `n` value will return _all the users_.
-Example: `users?limit=%27Hello%27`
+A non-numeric value falls back to the default (`limit` 40, `offset` 0).
+Example: `users?limit=%27Hello%27` returns the first 40 users.
 
 ##### GET /api/users?offset=10
 
@@ -217,8 +221,7 @@ curl http://127.0.0.1:3333/api/users?offset=10
 
 - Returns an object with a delay of 1 second (default)
 - Supports query string:
-  - ?limit=integer
-  - ?offset=integer
+  - ?delay=integer (milliseconds, min 1000, max 4000)
 
 #### Request:
 

@@ -1,7 +1,4 @@
-export const toNumber = (queryInput) => {
-  const toNumber = parseInt(queryInput, 10)
-  if (typeof toNumber === 'number' && !isNaN(toNumber)) {
-    return toNumber
-  }
-  return ''
+export const toNumber = (queryInput, fallback = 0) => {
+  const parsed = parseInt(queryInput, 10)
+  return isNaN(parsed) ? fallback : parsed
 }
